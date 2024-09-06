@@ -20,6 +20,11 @@
     --layout-grid: [full-start] 1fr [content] minmax(0, 1200px) 1fr [full-end];
   }
 
+  main {
+    display: grid;
+    grid-template-columns: var(--layout-grid);
+  }
+
   h1,
   h2,
   h3,
