@@ -1,0 +1,61 @@
+---
+
+---
+
+<header>
+  <div>
+    <h5>AskEksperts</h5>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Case study</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <button>Log in</button>
+  </div>
+</header>
+
+<style>
+  @layer components {
+    header {
+      display: grid;
+      grid-template-columns: var(--layout-grid);
+      background: var(--primary-03);
+      color: var(--secondary-02);
+      padding: 1rem 0;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      grid-column: content;
+      align-items: center;
+    }
+
+    nav {
+      display: grid;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      justify-self: center;
+      list-style: none;
+      gap: 2rem;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-02);
+    }
+
+    button {
+      background: var(--primary-01);
+      border-radius: 40px;
+      padding: 0.25rem 1rem;
+      color: var(--primary-03);
+    }
+  }
+</style>

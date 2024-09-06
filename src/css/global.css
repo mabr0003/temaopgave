@@ -9,5 +9,56 @@
     --primary-03: #181818;
     --secondary-01: #f5f5f5;
     --secondary-02: #ffffff;
+
+    --font-35-50: clamp(2.1875rem, 1.8614rem + 1.6304vw, 3.125rem);
+    --font-30-45: clamp(1.875rem, 1.5489rem + 1.6304vw, 2.8125rem);
+    --font-25-40: clamp(1.5625rem, 1.2364rem + 1.6304vw, 2.5rem);
+    --font-20-35: clamp(1.25rem, 0.9239rem + 1.6304vw, 2.1875rem);
+    --font-20-30: clamp(1.25rem, 1.0326rem + 1.087vw, 1.875rem);
+    --font-20-25: clamp(1.25rem, 1.1413rem + 0.5435vw, 1.5625rem);
+
+    --layout-grid: [full-start] 1fr [content] minmax(0, 1200px) 1fr [full-end];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cabin", sans-serif;
+  }
+
+  h1 {
+    font-size: var(--font-35-50);
+  }
+  h2 {
+    font-size: var(--font-30-45);
+  }
+  h3 {
+    font-size: var(--font-25-40);
+  }
+  h4 {
+    font-size: var(--font-20-35);
+  }
+  h5 {
+    font-size: var(--font-20-30);
+  }
+  h6 {
+    font-size: var(--font-20-25);
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;
+  }
+
+  li,
+  a {
+    font-family: "Lato", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
