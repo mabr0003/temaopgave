@@ -1,0 +1,10 @@
+---
+const { card } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<li>
+  <Icon name={card.icon} />
+  <h6>{card.title}</h6>
+  <p>{card.description}</p>
+</li>

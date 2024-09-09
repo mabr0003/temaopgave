@@ -1,0 +1,79 @@
+---
+const projections = await fetch("https://raw.githubusercontent.com/mabr0003/frontend-design/main/resources/json/projections.json").then((res) => res.json());
+
+import { Icon } from "astro-icon/components";
+---
+
+<section>
+  <Icon name="board" />
+  <h2>{projections.title}</h2>
+  <p>{projections.subtitle}</p>
+
+  <ul>
+    {
+      projections.values.map((card) => (
+        <li>
+          <Icon name={card.icon} />
+          <h6>{card.title}</h6>
+          <p>{card.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: inherit;
+    background: var(--secondary-01);
+    padding: 5rem 0;
+    row-gap: 10px;
+
+    p {
+      max-width: 75ch;
+    }
+
+    > * {
+      grid-column: content;
+    }
+
+    > ul {
+      scroll-snap-type: x mandatory;
+      grid-column: full;
+      padding-inline: max(1rem, 50% - 1200px / 2);
+      padding-block-end: 1rem;
+
+      li {
+        scroll-snap-align: center;
+      }
+    }
+
+    svg {
+      width: 10%;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    list-style: none;
+
+    li {
+      flex-basis: min(400px, 90%);
+      flex-shrink: 0;
+      background: #ebebeb;
+      color: #595566;
+      border-radius: 8px;
+      font-size: 1rem;
+      padding: 2.75rem 2.1875rem;
+      align-self: start;
+    }
+
+    svg {
+      width: 10%;
+    }
+  }
+</style>

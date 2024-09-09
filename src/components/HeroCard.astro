@@ -9,9 +9,11 @@ const { header, button } = Astro.props;
 </article>
 
 <style>
-  article {
-    background: rgba(38, 38, 38, 0.9);
-    padding: 2.875rem;
-    border-radius: 20px;
+  @layer components {
+    article {
+      background: rgba(38, 38, 38, 0.9);
+      padding: 2.875rem;
+      border-radius: 20px;
+    }
   }
 </style>
