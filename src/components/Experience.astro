@@ -1,0 +1,65 @@
+---
+import PieChart from "./PieChart.astro";
+---
+
+<section>
+  <article>
+    <div>
+      <span>EXPERIENCE</span>
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
+
+    <div>
+      <div>
+        <PieChart percent="85%" percenttag="85%" />
+        <h6>Consistency</h6>
+      </div>
+      <div>
+        <PieChart percent="95%" percenttag="95%" />
+        <h6>Improvement</h6>
+      </div>
+      <div>
+        <PieChart percent="90%" percenttag="90%" />
+        <h6>Branching</h6>
+      </div>
+    </div>
+  </article>
+
+  <style>
+    @layer components {
+      section {
+        grid-column: full;
+        display: grid;
+        grid-template-columns: subgrid;
+        background: var(--primary-01);
+        padding: 5rem 0;
+
+        > * {
+          grid-column: content;
+        }
+
+        article {
+          display: flex;
+          justify-content: space-between;
+
+          > div ~ div {
+            display: flex;
+            gap: 20px;
+
+            div {
+              display: grid;
+              justify-items: center;
+            }
+          }
+
+          > div > span {
+            background: var(--secondary-02);
+            padding: 0 0.75rem;
+            border-radius: 30px;
+          }
+        }
+      }
+    }
+  </style>
+</section>

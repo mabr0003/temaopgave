@@ -1,0 +1,94 @@
+---
+const corevalues = await fetch("https://raw.githubusercontent.com/mabr0003/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
+
+import { Icon } from "astro-icon/components";
+---
+
+<section>
+  <article>
+    <span>GROWING WITH OUR CLIENTS</span>
+    <h2>Our core values & principles</h2>
+    <div>
+      <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+      <button>Get in touch</button>
+    </div>
+  </article>
+  <ul>
+    {
+      corevalues.values.map((card) => (
+        <li>
+          <Icon name={card.icon} />
+          <h6>{card.title}</h6>
+          <p>{card.description}</p>
+          <button>Read more</button>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  @layer components {
+    section {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: subgrid;
+      background: var(--primary-03);
+      color: var(--secondary-02);
+      padding: 5rem 0;
+
+      > * {
+        grid-column: content;
+      }
+
+      article {
+        div {
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            max-width: 65ch;
+          }
+
+          button {
+            background: var(--secondary-02);
+            border-radius: 40px;
+            padding: 0.25rem 1rem;
+            color: var(--primary-03);
+          }
+        }
+
+        span {
+          background: var(--primary-01);
+          padding: 0 0.75rem;
+          border-radius: 30px;
+          color: var(--primary-03);
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        align-items: start;
+
+        li {
+          background: var(--secondary-02);
+          color: var(--primary-03);
+          border-radius: 20px;
+          padding: 2.25rem 1.4375rem;
+          max-width: 30ch;
+
+          button {
+            padding: 0;
+            font-weight: bold;
+          }
+        }
+      }
+
+      svg {
+        width: 50px;
+      }
+    }
+  }
+</style>

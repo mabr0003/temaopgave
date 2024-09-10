@@ -1,0 +1,46 @@
+---
+const { percent, percenttag } = Astro.props;
+---
+
+<div class="parent" style=`--percent: ${percent}`>
+  <div class="child"></div>
+  <span>{percenttag}</span>
+</div>
+
+<style>
+  @layer component {
+    .parent {
+      --offset-pos: 5px;
+      /*animation: --pie 3s linear infinite;*/
+      border: var(--offset-pos) solid transparent;
+      background:
+        radial-gradient(circle at 50% calc(var(--offset-pos) / 2), var(--secondary-02) calc(var(--offset-pos) / 2), transparent 0) border-box,
+        linear-gradient(var(--primary-01), var(--primary-01)) padding-box,
+        conic-gradient(var(--secondary-02) var(--percent), rgba(128, 128, 128, 0.517) 0) border-box;
+      position: relative;
+
+      aspect-ratio: 1;
+      width: 150px;
+      border-radius: 1e5px;
+      display: grid;
+
+      span {
+        align-self: center;
+        justify-self: center;
+        font-size: 45px;
+        font-weight: 600;
+      }
+    }
+
+    .child {
+      aspect-ratio: 1;
+      border-radius: 99px;
+      width: 20px;
+      background: var(--primary-03);
+      position: absolute;
+      offset-path: border-box;
+      offset-distance: var(--percent);
+      offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
+    }
+  }
+</style>
