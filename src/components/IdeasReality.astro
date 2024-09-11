@@ -1,0 +1,95 @@
+---
+
+---
+
+<section>
+  <article>
+    <div>
+      <span>OUR VISION</span>
+      <h2>Turn your ideas into reality.</h2>
+      <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+      <ul>
+        <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
+        <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
+      </ul>
+    </div>
+    <img src="/src/assets/images/ideas.jpg" alt="" />
+  </article>
+  <dl>
+    <div>
+      <dt>1128+</dt>
+      <dd>Successful Work</dd>
+    </div>
+    <div>
+      <dt>908+</dt>
+      <dd>Team member</dd>
+    </div>
+    <div>
+      <dt>258+</dt>
+      <dd>Happy Customers</dd>
+    </div>
+    <div>
+      <dt>564+</dt>
+      <dd>Creative Idea</dd>
+    </div>
+  </dl>
+</section>
+
+<style>
+  @layer components {
+    section {
+      grid-column: content;
+      padding: 5rem 0;
+      display: grid;
+
+      article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+
+        span {
+          background: var(--primary-02);
+          padding: 0 0.75rem;
+          border-radius: 30px;
+          color: var(--secondary-02);
+        }
+
+        ul {
+          padding: 0;
+          display: grid;
+          gap: 1rem;
+        }
+
+        li {
+          display: grid;
+          grid-template-columns: auto 1fr;
+
+          gap: 1rem;
+        }
+
+        li:before {
+          content: "";
+          width: 1.6rem;
+          aspect-ratio: 1;
+          background: var(--checkmark-icon) 50% 50% / contain no-repeat;
+        }
+      }
+
+      dl {
+        display: flex;
+        justify-self: center;
+        gap: 80px;
+
+        dt {
+          font-size: 50px;
+          font-family: "Cabin", sans-serif;
+        }
+
+        dd {
+          font-size: 18px;
+          font-family: "Cabin", sans-serif;
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+
+---
+
+<section>
+  <img src="/src/assets/images/abouthero.png" alt="" />
+  <div>
+    <span>SERVICES</span>
+    <h1>Creative Services For Boost Your Business Growth</h1>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    section {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: subgrid;
+
+      img {
+        grid-column: full;
+        grid-row: 1 / 2;
+      }
+
+      div {
+        grid-column: content;
+        grid-row: 1 / 2;
+        align-self: center;
+        background: #ffffffdd;
+        max-width: 65ch;
+        padding: 2rem;
+        border-radius: 20px;
+
+        span {
+          background: var(--primary-01);
+          padding: 0 0.75rem;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+</style>
