@@ -1,19 +1,19 @@
 ---
-
+import Popover from "./Popover.astro";
 ---
 
 <header>
   <div>
-    <h5>AskEksperts</h5>
+    <a href="/"><h5>AskEksperts</h5></a>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#">Case study</a></li>
         <li><a href="#">Team</a></li>
         <li><a href="#">About</a></li>
       </ul>
     </nav>
-    <button>Log in</button>
+    <Popover />
   </div>
 </header>
 
@@ -49,13 +49,6 @@
 
     a {
       color: var(--secondary-02);
-    }
-
-    button {
-      background: var(--primary-01);
-      border-radius: 40px;
-      padding: 0.25rem 1rem;
-      color: var(--primary-03);
     }
   }
 </style>
