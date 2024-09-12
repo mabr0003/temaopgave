@@ -12,7 +12,7 @@
       <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
     </ul>
   </div>
-  <img src="/src/assets/images/wte.png" alt="whattoexpect" />
+  <img src="/wte.png" alt="whattoexpect" />
 </section>
 
 <style>
@@ -65,6 +65,27 @@
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         border-radius: 40px;
+      }
+    }
+
+    @media (width < 600px) {
+      section {
+        grid-template-columns: 1fr;
+
+        span {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        div {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        img {
+          grid-column: 1;
+          grid-row: 3;
+        }
       }
     }
   }

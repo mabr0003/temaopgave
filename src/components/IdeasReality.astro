@@ -13,7 +13,7 @@
         <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
       </ul>
     </div>
-    <img src="/src/assets/images/ideas.jpg" alt="" />
+    <img src="/ideas.jpg" alt="" />
   </article>
   <dl>
     <div>
@@ -88,6 +88,19 @@
         dd {
           font-size: 18px;
           font-family: "Cabin", sans-serif;
+        }
+      }
+    }
+
+    @media (width < 600px) {
+      section {
+        grid-template-columns: 1fr;
+        article {
+          grid-template-columns: 1fr;
+        }
+
+        dl {
+          flex-direction: column;
         }
       }
     }

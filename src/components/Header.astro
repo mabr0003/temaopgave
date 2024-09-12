@@ -9,7 +9,7 @@ import Popover from "./Popover.astro";
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="#">Case study</a></li>
-        <li><a href="#">Team</a></li>
+        <li><a href="/team">Team</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
@@ -49,6 +49,18 @@ import Popover from "./Popover.astro";
 
     a {
       color: var(--secondary-02);
+    }
+
+    @media (width < 600px) {
+      div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+      }
     }
   }
 </style>

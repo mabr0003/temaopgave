@@ -123,5 +123,18 @@
         border-bottom: 1px solid;
       }
     }
+
+    @media (width < 600px) {
+      .newsletter {
+        flex-direction: column;
+        justify-items: center;
+
+        > div ~ div {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
   }
 </style>

@@ -10,7 +10,7 @@ import HeroCard from "./HeroCard.astro";
       <button>Book a meeting</button>
     </div>
   </div>
-  <img src="/src/assets/images/sarah.jpg" alt="" />
+  <img src="/sarah.jpg" alt="" />
   <div class="cards">
     <HeroCard header="Finance & Restructuring" button="Our Services" />
     <HeroCard header="Finance & Restructuring" button="Our Services" />
@@ -63,6 +63,30 @@ import HeroCard from "./HeroCard.astro";
         display: flex;
         gap: 20px;
         background: none;
+      }
+    }
+
+    @media (width < 600px) {
+      section {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-height: none;
+
+        .cards {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-row: 3;
+        }
+
+        div {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        img {
+          grid-column: 1;
+          grid-row: 2;
+        }
       }
     }
   }

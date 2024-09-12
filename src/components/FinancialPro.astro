@@ -107,5 +107,15 @@ import { Icon } from "astro-icon/components";
         color: var(--primary-03);
       }
     }
+
+    @media (width < 600px) {
+      section {
+        grid-template-columns: 1fr;
+
+        > div {
+          flex-direction: column;
+        }
+      }
+    }
   }
 </style>

@@ -1,0 +1,17 @@
+---
+const team = await fetch("https://raw.githubusercontent.com/mabr0003/frontend-design/refs/heads/main/resources/json/employees.json").then((res) => res.json());
+---
+
+<section>
+  <h2>Meet Our Great Team</h2>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
+    <button>Join our team</button>
+  </div>
+</section>
+
+<style>
+  section {
+    grid-column: content;
+  }
+</style>

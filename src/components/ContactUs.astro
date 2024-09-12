@@ -32,9 +32,9 @@ import { Icon } from "astro-icon/components";
     </div>
   </article>
   <div>
-    <img src="src/assets/images/contact1.jpg" alt="contact" />
-    <img src="src/assets/images/contact2.jpg" alt="contact" />
-    <img src="src/assets/images/contact3.jpg" alt="contact" />
+    <img src="/contact1.jpg" alt="contact" />
+    <img src="/contact2.jpg" alt="contact" />
+    <img src="/contact3.jpg" alt="contact" />
   </div>
 </section>
 
@@ -95,6 +95,12 @@ import { Icon } from "astro-icon/components";
 
     svg {
       width: 50px;
+    }
+
+    @media (width < 600px) {
+      section {
+        grid-template-columns: 1fr;
+      }
     }
   }
 </style>
