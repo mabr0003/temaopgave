@@ -1,0 +1,67 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const { img, name, title, description, slug, social_linkso } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/*.{jpeg,jpg,png,gif}");
+---
+
+<article>
+  <div>
+    <Image src={images[img]()} alt={name} width={300} height={300} />
+    <span>{title}</span>
+  </div>
+  <h5>{name}</h5>
+  <p>{description}</p>
+  <div class="icons">
+    <Icon name="instagram" />
+    <Icon name="facebook" />
+    <Icon name="twitter" />
+  </div>
+</article>
+
+<style>
+  @layer components {
+    article {
+      display: grid;
+      text-align: center;
+
+      h5 {
+        font-weight: bold;
+      }
+
+      > div:first-of-type {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        img {
+          grid-row: 1 / 3;
+          grid-column: 1;
+          border-radius: 20px;
+        }
+
+        span {
+          grid-row: 2 / 3;
+          grid-column: 1;
+          justify-self: end;
+          padding: 0.25rem 1.3125rem;
+          background: var(--primary-01);
+          border-radius: 20px;
+          margin: 1rem;
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-self: center;
+      gap: 20px;
+
+      svg {
+        width: 20px;
+      }
+    }
+  }
+</style>

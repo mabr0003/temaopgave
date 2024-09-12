@@ -1,5 +1,6 @@
 ---
-const team = await fetch("https://raw.githubusercontent.com/mabr0003/frontend-design/refs/heads/main/resources/json/employees.json").then((res) => res.json());
+const employees = await fetch("https://raw.githubusercontent.com/mabr0003/frontend-design/refs/heads/main/resources/json/employees.json").then((res) => res.json());
+import EmployeeCard from "./EmployeeCard.astro";
 ---
 
 <section>
@@ -8,10 +9,26 @@ const team = await fetch("https://raw.githubusercontent.com/mabr0003/frontend-de
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
     <button>Join our team</button>
   </div>
+  <!-- <div class="employees">
+    {
+      employees.map((employee) => {
+        return <EmployeeCard data={employee} />;
+      })
+    }
+  </div> -->
 </section>
 
 <style>
-  section {
-    grid-column: content;
+  @layer components {
+    section {
+      grid-column: content;
+    }
+
+    @media (width > 600px) {
+      .employees {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
   }
 </style>
